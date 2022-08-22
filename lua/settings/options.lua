@@ -7,7 +7,7 @@ opt.writebackup = false                     -- if a file is being edited by anot
 opt.swapfile = false                        -- creates a swapfile
 
 -- Better clipboard
-opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
+-- opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 
 opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
 opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp

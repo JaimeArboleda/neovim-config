@@ -32,12 +32,8 @@ return packer.startup(function(use)
   use { "kyazdani42/nvim-tree.lua" } -- File explorer
   use { "nvim-telescope/telescope.nvim" } -- Fuzzy finder
   use { "machakann/vim-sandwich" }
-  use { 
-    "phaazon/hop.nvim",
-    config = function() 
-      require "config.nvim_hop"
-    end
-  } -- Like EasyMotion but better
+  use { "phaazon/hop.nvim" } -- Like EasyMotion but better
+  use { "tomasr/molokai" } -- color scheme
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

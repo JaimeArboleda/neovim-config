@@ -70,7 +70,6 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["hop.nvim"] = {
-    config = { "\27LJ\2\2/\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\20config.nvim_hop\frequire\0" },
     loaded = true,
     path = "/home/jaime/.local/share/nvim/site/pack/packer/start/hop.nvim",
     url = "https://github.com/phaazon/hop.nvim.git"
@@ -79,6 +78,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jaime/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim.git"
+  },
+  molokai = {
+    loaded = true,
+    path = "/home/jaime/.local/share/nvim/site/pack/packer/start/molokai",
+    url = "https://github.com/tomasr/molokai.git"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -123,10 +127,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: hop.nvim
-time([[Config for hop.nvim]], true)
-try_loadstring("\27LJ\2\2/\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\20config.nvim_hop\frequire\0", "config", "hop.nvim")
-time([[Config for hop.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
