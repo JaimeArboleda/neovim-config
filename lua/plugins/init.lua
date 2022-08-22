@@ -32,11 +32,10 @@ return packer.startup(function(use)
   use { "kyazdani42/nvim-tree.lua" } -- File explorer
   use { "nvim-telescope/telescope.nvim" } -- Fuzzy finder
   use { "machakann/vim-sandwich" }
-  use {
+  use { 
     "phaazon/hop.nvim",
-    event = "VimEnter",
-    config = function()
-      vim.defer_fn(function() require('config.nvim_hop') end, 2000)
+    config = function() 
+      require "config.nvim_hop"
     end
   } -- Like EasyMotion but better
   -- Automatically set up your configuration after cloning packer.nvim

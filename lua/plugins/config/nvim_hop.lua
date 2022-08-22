@@ -1,4 +1,10 @@
-require('hop').setup({
+local present, hop = pcall(require, "hop")
+
+if not present then
+  return
+end
+
+hop.setup({
   case_insensitive = true,
   char2_fallback_key = '<CR>',
   quit_key='<Esc>',
