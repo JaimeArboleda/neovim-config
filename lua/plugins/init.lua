@@ -32,6 +32,7 @@ return packer.startup(function(use)
   use { "kyazdani42/nvim-tree.lua" } -- File explore
   use { "nvim-telescope/telescope.nvim" } -- Fuzzy finder
   use { "vim-scripts/ReplaceWithRegister" } -- gr to replace with register
+  use { "mg979/vim-visual-multi" } -- multi cursors
   use { -- Show git signs on the screen
     'lewis6991/gitsigns.nvim',
     config = function()
