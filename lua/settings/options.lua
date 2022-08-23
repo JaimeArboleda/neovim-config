@@ -1,5 +1,7 @@
 local g = vim.g
 local opt = vim.opt
+local cmd = vim.cmd
+local exec = vim.api.nvim_exec
 
 -- General settings
 opt.backup = false                          -- creates a backup file
@@ -27,8 +29,6 @@ opt.timeoutlen = 1000                       -- time to wait for a mapped sequenc
 opt.undofile = true                         -- enable persistent undo
 opt.updatetime = 300                        -- faster completion (4000ms default)
 opt.expandtab = true                        -- convert tabs to spaces
-opt.shiftwidth = 2                          -- the number of spaces inserted for each indentation
-opt.tabstop = 2                             -- insert 2 spaces for a tab
 opt.cursorline = true                       -- highlight the current line
 opt.number = true                           -- set numbered lines
 opt.relativenumber = true                   -- show relative number
@@ -50,3 +50,28 @@ opt.fillchars.eob=" "
 opt.shortmess:append "c"
 opt.whichwrap:append("<,>,[,],h,l")
 opt.iskeyword:append("-")
+
+
+-- highlight on yank
+
+exec(
+    [[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=200}
+  augroup end
+]],
+    false
+)
+
+opt.shiftwidth = 4 -- shift 4 spaces when tab
+opt.tabstop = 4 -- 1 tab == 4 spaces
+  
+
+-- don't auto comment new lines
+cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
+
+-- 2 spaces for selected filetypes
+cmd [[
+  autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml setlocal shiftwidth=2 tabstop=2
+]]

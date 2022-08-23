@@ -22,8 +22,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "gb", ":bnext<CR>", opts)
+keymap("n", "gB", ":bprevious<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -46,3 +46,7 @@ keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, sil
 keymap({ "n", "v" }, "<leader>cp", '"+p', { noremap = true })
 keymap({ "n", "v" }, "<leader>cy", '"+y', { noremap = true })
 
+-- Y yank to end of line, H move begin of line, L move end of line 
+keymap({ "n", "v", "o" }, "H", "^", { noremap = true })
+keymap({ "n", "v", "o" }, "L", "$", { noremap = true })
+keymap("n", "Y", "y$", { noremap = true })

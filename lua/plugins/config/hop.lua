@@ -10,7 +10,7 @@ hop.setup({
   quit_key='<Esc>',
 })
 
-vim.keymap.set('n', '<leader>f', function()
+vim.keymap.set({ 'n', 'v' }, '<leader>f', function()
   return require('hop').hint_char2()
 end,
 { silent = true, noremap = true, desc = "nvim-hop char2" })

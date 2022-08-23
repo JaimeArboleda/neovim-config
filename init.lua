@@ -7,6 +7,9 @@ require "plugins"
 --
 --
 -- configuration for plugins
-require "plugins/config/nvim_hop"
+require "plugins/config/hop"
+require "plugins/config/mini"
+require "plugins/config/nvim-tree"
+require "plugins/config/toggleterm"
 --
 --

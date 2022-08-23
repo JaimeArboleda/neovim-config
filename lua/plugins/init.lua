@@ -25,15 +25,24 @@ return packer.startup(function(use)
   -- My plugins here
   use { "wbthomason/packer.nvim" } -- Have packer manage itself
   use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
-  use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
+--  use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
   use { "akinsho/toggleterm.nvim" } -- Multiple terminals easier
   use { "lewis6991/impatient.nvim" } -- Speed up loading lua files
   use { "kyazdani42/nvim-web-devicons" } -- Required for next plugin
-  use { "kyazdani42/nvim-tree.lua" } -- File explorer
+  use { "kyazdani42/nvim-tree.lua" } -- File explore
   use { "nvim-telescope/telescope.nvim" } -- Fuzzy finder
-  use { "machakann/vim-sandwich" }
+  use { "vim-scripts/ReplaceWithRegister" } -- gr to replace with register
+  use { -- Show git signs on the screen
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
+-- use { "machakann/vim-sandwich" }
   use { "phaazon/hop.nvim" } -- Like EasyMotion but better
+  use { "echasnovski/mini.nvim" }
   use { "tomasr/molokai" } -- color scheme
+  use { "arcticicestudio/nord-vim" } -- color scheme
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
