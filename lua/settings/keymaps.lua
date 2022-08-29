@@ -50,3 +50,8 @@ keymap({ "n", "v" }, "<leader>cy", '"+y', { noremap = true })
 keymap({ "n", "v", "o" }, "H", "^", { noremap = true })
 keymap({ "n", "v", "o" }, "L", "$", { noremap = true })
 keymap("n", "Y", "y$", { noremap = true })
+
+-- Jupytext cells
+keymap("n", "<leader>nc", "o# %%<CR>", { noremap = true })
+keymap("n", "<leader>nm", "o# %% [markdown]<CR># ", { noremap = true })
+
